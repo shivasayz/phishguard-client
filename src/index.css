@@ -8,10 +8,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 14px;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -24,9 +20,6 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  transform-origin: top center;
-  transform: scale(0.7);
-  min-height: 100vh;
 }
 
 @keyframes fade-in {
