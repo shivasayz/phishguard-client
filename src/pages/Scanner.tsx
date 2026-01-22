@@ -31,7 +31,7 @@ function Scanner() {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/history');
+      const response = await axios.get('http://13.204.83.64:8000/history');
       setHistory(response.data);
     } catch (err) {
       console.error('Failed to fetch history:', err);
@@ -40,7 +40,7 @@ function Scanner() {
 
   const clearHistoryData = async () => {
     try {
-      await axios.post('http://localhost:8000/clear-history');
+      await axios.post('http://13.204.83.64:8000/clear-history');
       setHistory([]);
     } catch (err) {
       setError("Failed to clear history");
@@ -66,14 +66,14 @@ function Scanner() {
     try {
       let response;
       if (scanType === 'text') {
-        response = await axios.post("http://localhost:8000/scan", {
+        response = await axios.post("http://13.204.83.64:8000/scan", {
           content_type: "text",
           text_content: emailText
         });
         setEmailText("");
       } else {
         let urlToSend = urlInput.startsWith('http') ? urlInput : 'http://' + urlInput;
-        response = await axios.post("http://localhost:8000/scan", {
+        response = await axios.post("http://13.204.83.64:8000/scan", {
           content_type: "url",
           url: urlToSend
         });
